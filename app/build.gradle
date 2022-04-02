@@ -15,6 +15,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
